@@ -1,28 +1,29 @@
 # django-pack-notification
-Es una librería que permite enviar notificaciones desde Django hacia Slack
+This library allows you to send notifications from Django to Slack
 
-### Requisitos
-* Necesitas crear una App, respecto a un grupo existente en Slack.
-* Generar un Webhook URL en el canal al cual se enviarán las notificaciones o los mensajes.
+### Requirements
+* Create an app in your Slack group.
+* Generate a Webhook URL for channel that you will send the notifications or messages.
 
-### Instalación
+### Installation 
 ```sh
 $ pip install django-pack-notification
 ```
-Agregar en INSTALLED_APPS
+Add in INSTALLED_APPS
 ```py
-django_pack_notification
+    ...
+    'django_pack_notification'
 ```
 
-Agregar a settings.py la ruta
+Add in settings.py the link
 ```py
 # Url general Channel
 SLACK_DEFAULT_URL = "https://hooks.slack.com/services/XXXXXXXXX/YYYYYYYY/OXbi63xBPrGeceUMsEsTngUA"
 ```
-A continuación se muestra un ejemplo:
+Here you can guide by this example:
 ```py
-msg = "<html><body><h2>Se envió correctamnete</h2></body></html>"
-msg_error = "<html><body><h2>No se pudo enviar</h2></body></html>"
+msg = "<html><body><h2>It sended succesfully.</h2></body></html>"
+msg_error = "<html><body><h2>It couldn't send.</h2></body></html>"
 message = ""
 to_user = "everyone"
 
@@ -40,5 +41,5 @@ def MessageStore(request):
     else:
         return HttpResponse(msg_error)
 ```
-La funcion StoreCreated() retorna la data en formato Json de acuerdo a un estilo de mensaje que se mostrará en Slack. Luego se ejecuta la función
-send_slack(), retornando un boolean si se envió el mensaje.
+The function StoreCreated() returns the data sended parse in Json format According to a message style that will be displayed in Slack.
+The functiont send_slack() will send the notification using a POST request.
