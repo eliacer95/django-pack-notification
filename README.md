@@ -9,12 +9,15 @@ Es una librería que permite enviar notificaciones desde Django hacia Slack
 ```sh
 $ pip install django-pack-notification
 ```
+Agregar en INSTALLED_APPS
+```py
+django_pack_notification
+```
 
 Agregar a settings.py la ruta
 ```py
 # Url general Channel
 SLACK_DEFAULT_URL = "https://hooks.slack.com/services/XXXXXXXXX/YYYYYYYY/OXbi63xBPrGeceUMsEsTngUA"
-
 ```
 A continuación se muestra un ejemplo:
 ```py
