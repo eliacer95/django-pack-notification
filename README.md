@@ -35,5 +35,13 @@ def MessageStore(request):
     else:
         return HttpResponse(msg_error)
 ```
-The function StoreCreated() returns the data sended parse in Json format According to a message style that will be displayed in Slack.
+The function StoreCreated() returns the data sended parse in JSON format According to a message style that will be displayed in Slack.
 The functiont send_slack() will send the notification using a POST request.
+
+### All functions:
+* StoreCreated(to_user, store, ruc, razon_social, username, email_store)
+* UserCreated(to_user, full_name, email, user)
+* Error(to_user, title, schema, description)
+* send_slack(data)
+
+Until now, the parameters each function parse in JSON, are basic forms to send message from django to Slack.
