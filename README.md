@@ -9,12 +9,6 @@ This library allows you to send notifications from Django to Slack
 ```sh
 $ pip install django-pack-notification
 ```
-Add in INSTALLED_APPS
-```py
-    ...
-    'django_pack_notification'
-```
-
 Add in settings.py the link
 ```py
 # Url general Channel
