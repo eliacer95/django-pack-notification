@@ -19,6 +19,8 @@ title | String | Si | message's Title.
 message | String | Si | All description that the message will have.
 subtitle | String | No | An specific name for the message.
 
+In this link you can find basic message formatting https://api.slack.com/docs/message-formatting
+
 ### Enviando notificaciones:
 ```py
 url = "https://hooks.slack.com/services/XXXXXXXXX/YYYYYYYY/OXbi63xBPrGeceUMsEsTngUA"
