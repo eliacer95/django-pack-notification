@@ -19,7 +19,15 @@ title | String | Si | message's Title.
 message | String | Si | All description that the message will have.
 subtitle | String | No | An specific name for the message.
 
-In this link you can find basic message formatting https://api.slack.com/docs/message-formatting
+In this link you can find basic message formatting https://api.slack.com/docs/message-formatting. Supported formatting includes: 
+ italic, bold, and even strike and others ways. For example:
+```py
+message_bold = "*Hello Word*"
+message_italic = "_Hello Word_"
+message_strike = "~Hello Word~"
+message_code = "`Hello Word`"
+message_paragraph = "Hello Word \n This is an exmaple"
+```
 
 ### Enviando notificaciones:
 ```py
