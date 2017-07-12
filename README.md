@@ -9,7 +9,17 @@ This library allows you to send notifications from Django to Slack
 ```sh
 $ pip install django-package-notification
 ```
-How to use:
+
+## Parametros
+
+Nombre de parámetro | Tipo | Obligatorio | Descripcion
+------------ | ------------- | ------------ | ----------
+url | String | Si | Channel url where the notifications will send.
+title | String | Si | message's Title.
+message | String | Si | All description that the message will have.
+subtitle | String | No | An specific name for the message.
+
+### Enviando notificaciones:
 ```py
 url = "https://hooks.slack.com/services/XXXXXXXXX/YYYYYYYY/OXbi63xBPrGeceUMsEsTngUA"
 
