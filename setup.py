@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-  name = 'django-pack-notification',
+  name = 'django-package-notification',
   packages = ['django_pack_notification'],
   version = '0.1',
   description = 'Permite comunicar django con slack',
