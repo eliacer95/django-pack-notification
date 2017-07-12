@@ -1,4 +1,5 @@
-*.pypirc
+
 __pycache__/
 dist/
 README.txt
+django_pack_notification/__pycache__/
