@@ -6,6 +6,7 @@ django_pack_notification\__init__.py
 django_pack_notification\admin.py
 django_pack_notification\apps.py
 django_pack_notification\models.py
+django_pack_notification\notifications.py
 django_pack_notification\slack.py
 django_pack_notification\tests.py
 django_pack_notification\urls.py
