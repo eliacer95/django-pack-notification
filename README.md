@@ -1,4 +1,4 @@
-# django-pack-notification
+# django-package-notification
 This library allows you to send notifications from Django to Slack
 
 ### Requirements
@@ -7,41 +7,33 @@ This library allows you to send notifications from Django to Slack
 
 ### Installation 
 ```sh
-$ pip install django-pack-notification
+$ pip install django-package-notification
 ```
-Add in settings.py the link
+
+## Parametros
+
+Nombre de parámetro | Tipo | Obligatorio | Descripcion
+------------ | ------------- | ------------ | ----------
+url | String | Si | Channel url where the notifications will send.
+title | String | Si | message's Title.
+message | String | Si | All description that the message will have.
+subtitle | String | No | An specific name for the message.
+
+In this link you can find basic message formatting https://api.slack.com/docs/message-formatting. Supported formatting includes: 
+ italic, bold, and even strike and others ways. For example:
 ```py
-# Url general Channel
-SLACK_DEFAULT_URL = "https://hooks.slack.com/services/XXXXXXXXX/YYYYYYYY/OXbi63xBPrGeceUMsEsTngUA"
+message_bold = "*Hello Word*"
+message_italic = "_Hello Word_"
+message_strike = "~Hello Word~"
+message_code = "`Hello Word`"
+message_paragraph = "Hello Word \n This is an exmaple"
 ```
-Here you can guide by this example:
+
+### Enviando notificaciones:
 ```py
-msg = "<html><body><h2>It sended succesfully.</h2></body></html>"
-msg_error = "<html><body><h2>It couldn't send.</h2></body></html>"
-message = ""
-to_user = "everyone"
+url = "https://hooks.slack.com/services/XXXXXXXXX/YYYYYYYY/OXbi63xBPrGeceUMsEsTngUA"
 
-def MessageStore(request):
-    store = "Admin"
-    ruc = "20152345678"
-    razon_social = "Inversiones Vasquez S.R.L"
-    username = "Omelia432"
-    email_store = "vasquez@gmail.com"
-
-    data = StoreCreated(to_user, store, ruc, razon_social, username, email_store)
-    message = send_slack(data)
-    if message:
-        return HttpResponse(msg)
-    else:
-        return HttpResponse(msg_error)
+send_notification_success(url, title, message, subtitle)
+send_notification_error(url, title, message, subtitle)
 ```
-The function StoreCreated() returns the data sended parse in JSON format According to a message style that will be displayed in Slack.
-The functiont send_slack() will send the notification using a POST request.
-
-### All functions:
-* StoreCreated(to_user, store, ruc, razon_social, username, email_store)
-* UserCreated(to_user, full_name, email, user)
-* Error(to_user, title, schema, description)
-* send_slack(data)
-
-Until now, the parameters each function parse in JSON, are basic forms to send message from django to Slack.
+These functions return a boolean if the message has been sended.
