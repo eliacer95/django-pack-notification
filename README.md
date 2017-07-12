@@ -26,4 +26,4 @@ url = "https://hooks.slack.com/services/XXXXXXXXX/YYYYYYYY/OXbi63xBPrGeceUMsEsTn
 send_notification_success(url, title, message, subtitle)
 send_notification_error(url, title, message, subtitle)
 ```
-
+These functions return a boolean if the message has been sended.
