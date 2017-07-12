@@ -1,2 +1,2 @@
-.pypirc
-
+*.pypirc
+/__pycache__
